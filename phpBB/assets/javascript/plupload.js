@@ -486,7 +486,8 @@ phpbb.plupload.uploader.bind('Error', function(up, error) {
 	if (error.code === plupload.FILE_EXTENSION_ERROR) {
 		error.message = plupload.translate('Invalid file extension:') + ' ' + error.file.name;
 	} else if (error.code === plupload.FILE_SIZE_ERROR) {
-		error.message = plupload.translate('File too large:') + ' ' + error.file.name;
+            // skibuilders mod: show the actual file size vs the max allowed size
+	    error.message = plupload.translate('File too large:') + ' ' + error.file.name + ' is ' + plupload.formatSize(error.file.size) + ' but, the maximum allowed size is ' + plupload.formatSize(parseInt(phpbb.plupload.config.max_file_size));
 	}
 	phpbb.alert(phpbb.plupload.lang.ERROR, error.message);
 });
