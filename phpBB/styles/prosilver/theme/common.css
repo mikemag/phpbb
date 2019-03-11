@@ -177,8 +177,8 @@ a:hover	{ text-decoration: underline; }
 
 .site_logo {
 	display: inline-block;
-	width: 149px;
-	height: 52px;
+	width: 700px;
+	height: 163px;
 }
 
 /* Site description and logo */
@@ -188,7 +188,12 @@ a:hover	{ text-decoration: underline; }
 }
 
 .site-description h1 {
-	margin-right: 0;
+    margin-right: 0;
+    display: none; /* To hide site title in header, in favor of img */
+}
+
+.site-description p {
+    display: none; /* To hide site desc in header, in favor of img */
 }
 
 /* Round cornered boxes and backgrounds
@@ -197,6 +202,7 @@ a:hover	{ text-decoration: underline; }
 	margin-bottom: 4px;
 	padding: 5px;
 	border-radius: 7px;
+        overflow: hidden;
 }
 
 .navbar {
